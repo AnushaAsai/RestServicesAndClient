@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script>
+            function loadData() {
+                fetch('http://localhost:8080/Assignment1RESTService/resources/shows/all')
+                        .then(function (response) {
+                            return response.json();
+                        }).then(function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        var commentDiv = document.createElement('tr');
+                        commentDiv.innerHTML = '<td data-toggle="modal" data-id="' + data[i].id + '" data-target="#myModal">'
+                                + data[i].title + '</td>';
+                        document.getElementById('showsContainer').appendChild(commentDiv);
+                    }
+                    ;
+                });
+            }
+            $(document).ready(function () {
+                $('#myModal').on('show.bs.modal', function (e) {
+                    var showId = $(e.relatedTarget).attr('data-id');
+                    console.log(showId);
+                    fetch('http://localhost:8080/Assignment1RESTService/resources/shows/all/' + showId)
+                            .then(function (response) {
+                                return response.json();
+                            }).then(function (data) {
+                        var base64String = btoa(String.fromCharCode.apply(null, new Uint8Array(data.thumbnail)));
+                        var image = document.getElementById('thumbnail');
+                        image.src = 'data:image/jpg;base64,' + base64String;
+                        document.getElementById('showTitle').innerHTML = "<b>"+data.title+"</b>";
+                        document.getElementById('showDesc').innerHTML = "<b>Description: </b>" + data.description;
+                        document.getElementById('showCast').innerHTML = "<b>Cast: </b>" + data.cast;
+                        document.getElementById('showYear').innerHTML = "<b>Year of release: </b>" + data.yearOfRelease;
+                        document.getElementById('showDir').innerHTML = "<b>Director: </b>" + data.director;
+                        document.getElementById('showType').innerHTML =  data.typeid.type;
+                        document.getElementById('showCategory').innerHTML =  data.categoryid.categoryName;
+                    });
+                });
+            });
+        </script>
+        <style>
+            html,
+            body {
+                height: 100;
+                margin: 0 auto;
+                background-color: #D3E6D4;
+                color: #1E1E1E;
+            }    
+            .container{
+                border-radius: 25px;
+                background-color:#FEFEFE;
+                background-color: rgba(255,255,255,0.5);
+                padding-bottom: 20px;
+            }
+            .table {
+                border-radius: 5px;
+                width: 50%;
+                margin: 0px auto;
+                float: none;
+            }
+            .table td, .table th {
+                text-align: center;   
+            }
+        </style>
+    </head>
+    <body onload="loadData();">
+        <h2 align="center">What would you like to watch?</h2>
+        <div class="container" >
+            <h3 align="center">Click on the show for details</h3>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Title</th>
+                    </tr>
+                </thead>
+                <tbody id="showsContainer">
+                </tbody>
+            </table>
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">You selected: <span id="showTitle"></span></h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="card" style="margin:0 auto">
+                                <img class="card-img-top"  id="thumbnail" alt="Card image" style="width:100%">
+                                <div class="card-body">
+                                    <h4 class="card-title" ></h4>
+                                    <p class="card-text"><b>Type: </b><span id="showType"></span>
+                                        <b> Category: </b><span id="showCategory"></span></p>
+                                    <p class="card-text" id="showDesc"></p>
+                                    <p class="card-text" id="showCast"></p>
+                                    <p class="card-text" id="showYear"></p>
+                                    <p class="card-text" id="showDir"></p>
+                                    <a href="#" class="btn btn-primary">Watch Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

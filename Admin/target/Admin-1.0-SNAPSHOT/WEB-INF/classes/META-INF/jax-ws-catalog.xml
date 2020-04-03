@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/ShowsSOAPService/TypeCRUD?wsdl" uri="wsdl/localhost_8080/ShowsSOAPService/TypeCRUD.wsdl"/>
+    <system systemId="http://localhost:8080/ShowsSOAPService/TypeCRUD?xsd=1" uri="wsdl/localhost_8080/ShowsSOAPService/TypeCRUD.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ShowsSOAPService/CategoryCRUD?wsdl" uri="wsdl/localhost_8080/ShowsSOAPService/CategoryCRUD.wsdl"/>
+    <system systemId="http://localhost:8080/ShowsSOAPService/CategoryCRUD?xsd=1" uri="wsdl/localhost_8080/ShowsSOAPService/CategoryCRUD.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ShowsSOAPService/ShowCRUD?wsdl" uri="wsdl/localhost_8080/ShowsSOAPService/ShowCRUD.wsdl"/>
+    <system systemId="http://localhost:8080/ShowsSOAPService/ShowCRUD?xsd=1" uri="wsdl/localhost_8080/ShowsSOAPService/ShowCRUD.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/ShowsSOAPService/ShowCategoryTypeCRUD?wsdl" uri="wsdl/localhost_8080/ShowsSOAPService/ShowCategoryTypeCRUD.wsdl"/>
+    <system systemId="http://localhost:8080/ShowsSOAPService/ShowCategoryTypeCRUD?xsd=1" uri="wsdl/localhost_8080/ShowsSOAPService/ShowCategoryTypeCRUD.xsd_1.xsd"/>
+    <system systemId="https://assignment1-soap-service.herokuapp.com/ShowCRUD?WSDL" uri="wsdl/assignment1-soap-service.herokuapp.com/ShowCRUD.wsdl"/>
+    <system systemId="https://assignment1-soap-service.herokuapp.com/TypeCRUD?WSDL" uri="wsdl/assignment1-soap-service.herokuapp.com/TypeCRUD.wsdl"/>
+    <system systemId="https://assignment1-soap-service.herokuapp.com/CategoryCRUD?WSDL" uri="wsdl/assignment1-soap-service.herokuapp.com/CategoryCRUD.wsdl"/>
+    <system systemId="http://localhost:8080/Assignment1SOAPService/CategoryCRUD?wsdl" uri="wsdl/localhost_8080/Assignment1SOAPService/CategoryCRUD.wsdl"/>
+    <system systemId="http://localhost:8080/Assignment1SOAPService/CategoryCRUD?xsd=1" uri="wsdl/localhost_8080/Assignment1SOAPService/CategoryCRUD.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/Assignment1SOAPService/TypeCRUD?wsdl" uri="wsdl/localhost_8080/Assignment1SOAPService/TypeCRUD.wsdl"/>
+    <system systemId="http://localhost:8080/Assignment1SOAPService/TypeCRUD?xsd=1" uri="wsdl/localhost_8080/Assignment1SOAPService/TypeCRUD.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/Assignment1SOAPService/ShowCRUD?wsdl" uri="wsdl/localhost_8080/Assignment1SOAPService/ShowCRUD.wsdl"/>
+    <system systemId="http://localhost:8080/Assignment1SOAPService/ShowCRUD?xsd=1" uri="wsdl/localhost_8080/Assignment1SOAPService/ShowCRUD.xsd_1.xsd"/>
+</catalog>

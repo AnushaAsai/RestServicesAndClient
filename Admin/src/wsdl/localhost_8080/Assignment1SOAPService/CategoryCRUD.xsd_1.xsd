@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.4.3 (RELEASE-2.4.3-ad3323c; 2019-01-21T17:46:06+0000) JAXWS-RI/2.3.2 JAXWS-API/2.3.2 JAXB-RI/2.3.2 JAXB-API/2.3.2 git-revision#unknown. --><xs:schema xmlns:tns="http://services/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://services/">
+
+<xs:element name="addCategory" type="tns:addCategory"/>
+
+<xs:element name="addCategoryResponse" type="tns:addCategoryResponse"/>
+
+<xs:element name="category" type="tns:category"/>
+
+<xs:element name="findCategory" type="tns:findCategory"/>
+
+<xs:element name="findCategoryResponse" type="tns:findCategoryResponse"/>
+
+<xs:element name="viewCategory" type="tns:viewCategory"/>
+
+<xs:element name="viewCategoryResponse" type="tns:viewCategoryResponse"/>
+
+<xs:complexType name="viewCategory">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="viewCategoryResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:category" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="category">
+<xs:sequence>
+<xs:element name="categoryName" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addCategory">
+<xs:sequence>
+<xs:element name="cat" type="tns:category" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addCategoryResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findCategory">
+<xs:sequence>
+<xs:element name="arg0" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findCategoryResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:category" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

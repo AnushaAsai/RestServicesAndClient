@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.4.3 (RELEASE-2.4.3-ad3323c; 2019-01-21T17:46:06+0000) JAXWS-RI/2.3.2 JAXWS-API/2.3.2 JAXB-RI/2.3.2 JAXB-API/2.3.2 git-revision#unknown. --><xs:schema xmlns:tns="http://services/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://services/">
+
+<xs:element name="addShow" type="tns:addShow"/>
+
+<xs:element name="addShowResponse" type="tns:addShowResponse"/>
+
+<xs:element name="category" type="tns:category"/>
+
+<xs:element name="deleteShow" type="tns:deleteShow"/>
+
+<xs:element name="deleteShowResponse" type="tns:deleteShowResponse"/>
+
+<xs:element name="findShow" type="tns:findShow"/>
+
+<xs:element name="findShowResponse" type="tns:findShowResponse"/>
+
+<xs:element name="shows" type="tns:shows"/>
+
+<xs:element name="type" type="tns:type"/>
+
+<xs:element name="updateShow" type="tns:updateShow"/>
+
+<xs:element name="updateShowResponse" type="tns:updateShowResponse"/>
+
+<xs:element name="viewShow" type="tns:viewShow"/>
+
+<xs:element name="viewShowResponse" type="tns:viewShowResponse"/>
+
+<xs:complexType name="updateShow">
+<xs:sequence>
+<xs:element name="updateShow" type="tns:shows" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="shows">
+<xs:sequence>
+<xs:element name="cast" type="xs:string" minOccurs="0"/>
+<xs:element name="categoryid" type="tns:category" minOccurs="0"/>
+<xs:element name="description" type="xs:string" minOccurs="0"/>
+<xs:element name="director" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:decimal" minOccurs="0"/>
+<xs:element name="thumbnail" type="xs:base64Binary" minOccurs="0"/>
+<xs:element name="title" type="xs:string" minOccurs="0"/>
+<xs:element name="typeid" type="tns:type" minOccurs="0"/>
+<xs:element name="yearOfRelease" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="category">
+<xs:sequence>
+<xs:element name="categoryName" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="type">
+<xs:sequence>
+<xs:element name="id" type="xs:decimal" minOccurs="0"/>
+<xs:element name="type" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateShowResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addShow">
+<xs:sequence>
+<xs:element name="showsAdd" type="tns:shows" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addShowResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:shows" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteShow">
+<xs:sequence>
+<xs:element name="deleteShow" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteShowResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findShow">
+<xs:sequence>
+<xs:element name="arg0" type="xs:decimal" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findShowResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:shows" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="viewShow">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="viewShowResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:shows" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
